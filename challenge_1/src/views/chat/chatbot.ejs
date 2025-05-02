@@ -1,0 +1,107 @@
+<div id="chatbot" class="fixed-bottom bg-secondary bg-gradient bg-opacity-75" >
+    <div id="chatbot_header" class="bg-secondary text-white fs-3 text-uppercase text-center d-flex
+    justify-content-between">
+        <div>
+            <i class="bi bi-chat ms-3 me-1"></i>
+            furia chat
+        </div>
+        <button type="button" class="btn-close" onclick="toggleChatbot()"></button>
+    </div>
+
+    <div id="chatbot_messages" class="">
+        <div id="bot_message" class="bg-secondary-subtle">
+            <p>
+                Olá furiosos! <br>
+                Bem-vindo(a) ao webchat dos fãs da FURIA:CS <br>
+                Use o comando <strong>"help"</strong> para ver os comandos do chat.
+            </p>
+        </div>
+    </div>
+
+    <div
+        id="chatbot_input"
+        class="bg-secondary d-flex align-items-center p-2"
+    >
+
+        <input 
+            type="text"
+            name="chatbot_input_message"
+            id="chatbot_input_message"
+            class="form-control me-2"
+            placeholder="Digite sua mensagem..."
+            required
+        >
+
+        <button
+            type="button"
+            onclick="sendMessage()"
+            id="chatbot_send_button"
+            class="btn btn-danger h-100"
+        >
+            <i class="bi bi-send fs-6"></i>
+        </button>
+
+    </div>
+</div>
+
+<button id="open_chatbot_button" class="btn btn-success position-fixed bottom-0 end-0 m-3" style="display: none;" onclick="toggleChatbot()">
+    <i class="bi bi-chat fs-4"></i>
+</button>
+
+<script>
+    const input = document.getElementById("chatbot_input_message");
+    const button = document.getElementById("chatbot_send_button");
+
+    function toggleChatbot() {
+        const chatbot = document.getElementById("chatbot");
+        const openButton = document.getElementById("open_chatbot_button");
+
+        const isVisible = chatbot.style.display !== "none";
+        
+        if (isVisible) {
+            chatbot.style.display = "none";
+            openButton.style.display = "block";
+        } else {
+            chatbot.style.display = "block";
+            openButton.style.display = "none";
+        }
+    }
+
+
+    input.addEventListener('keydown', function(event){
+        if(event.key === "Enter"){
+            event.preventDefault();
+            button.click()
+        }
+    })
+
+    function sendMessage() {
+        console.log("Botão acionado!")
+
+        const inputMessage = input.value;
+        if(inputMessage.trim() === ('')){
+            return
+        }
+        
+        console.log(inputMessage)
+
+        fetch('/chat',{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({inputMessage}),
+        })
+        .then(res => res.text())
+        .then(html => {
+            const chatDiv = document.getElementById("chatbot_messages");
+
+            chatDiv.innerHTML += html;
+            chatDiv.scrollTop = chatDiv.scrollHeight;
+            input.value = "";
+        })
+        .catch(error => {
+            console.error("Erro:", error)
+        })
+    }
+</script>
