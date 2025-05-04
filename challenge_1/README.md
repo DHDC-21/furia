@@ -1,5 +1,7 @@
 # Desafio #1: Experiência Conversacional
 
+[[Voltar ao Desafio Técnico]](../README.md)
+
 ## Índice
 
 - [Objetivo](#objetivo)
@@ -13,8 +15,9 @@
 
 ## [Objetivo](#índice)
 
-> Descreva de forma breve qual era o desafio proposto e o que você desenvolveu.  
-> Por exemplo: "Criar um chatbot funcional com interface web responsiva e integração com comandos pré-definidos."
+> Desenvolver um caso de uso conversacional relacionado à FURIA (Telegram, web chat ou mobile chat).
+
+> O chat para os fãs do time de CS da FURIA deve conter tudo que o fã gostaria de ver para acompanhar e interagir com o time.
 
 ## [Tecnologias Utilizadas](#índice)
 
@@ -29,7 +32,7 @@
 
 ## [Estrutura do Projeto](#índice)
 
-O referente projeto esta organizado seguindo os moldes do padrão MVC:
+O referente projeto esta organizado seguindo o modelo MVC de desenvolvimento web:
 
 ```
 .
@@ -70,11 +73,8 @@ O referente projeto esta organizado seguindo os moldes do padrão MVC:
 
 ## [Funcionalidades](#índice)
 
-> Liste as principais funcionalidades implementadas:
-
 - Chatbot com respostas interativas
 - Interface responsiva com Bootstrap
-- Comandos específicos sobre o time FURIA
 - Minimizar/expandir chatbot
 - Histórico de mensagens (até recarregar a página)
 - Navegação pelas seções da landing page
