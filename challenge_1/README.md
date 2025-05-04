@@ -9,9 +9,12 @@
 - [Estrutura do Projeto](#estrutura-do-projeto)
 - [Funcionalidades](#funcionalidades)
 - [Diagramas](#diagramas)
-- [Comandos do Chatbot](#comandos-do-chatbot)
-- [Aprendizados](#aprendizados)
-- [Licença](#licença)
+- [Como utilizar o projeto?](#como-utilizar-o-projeto)
+    - [Instalação](#instalação-do-projeto)
+    - [Resultados](#resultados)
+    - [Comandos do Chatbot](#comandos-do-chatbot)
+<!-- - [Aprendizados](#aprendizados) -->
+<!-- - [Licença](#licença) -->
 
 ## [Objetivo](#índice)
 
@@ -81,9 +84,58 @@ O referente projeto esta organizado seguindo o modelo MVC de desenvolvimento web
 
 ## [Diagramas](#índice)
 
-> *Em breve...*
+> ![Casos_de_Uso](./doc/Diagrama_de_Casos_de_Uso.drawio.png)
 
-## [Comandos do Chatbot](#índice)
+## [Como utilizar o projeto?](#índice)
+
+### [Instalação do projeto:](#índice)
+
+Após instalar o NodeJS e o git, utilize os seguintes comando no terminal:
+
+1. Clone o projeto utilizando git ou fazendo o download dos arquivos no github
+
+```bash
+git clone https://github.com/DHDC-21/furia.git
+```
+
+2. Entre na pasta do desafio 1
+
+```bash
+cd ./furia/challenge_1
+```
+
+3. Utilize os seguintes os comando `npm i` ou `npm install` para instalar o node modulos
+
+4. Inicie o projeto
+
+```bash
+npm start
+```
+
+5. Acesso o navegador com o seguinte endereço
+
+```bash
+http://localhost:3000
+```
+
+### [Resultados](#índice)
+
+![webchat](./doc/Screenshot_01_WebChat_da_FURIA.png)
+
+![home](./doc/Screenshot_02_home.png)
+
+![agenda-resultados](./doc/Screenshot_03_agenda.png)
+
+![jogadores](./doc/Screenshot_04_jogadores.png)
+
+![contatos](./doc/Screenshot_05_noticias.png)
+
+![contatos](./doc/Screenshot_06_contatos.png)
+
+![home-desktop](./doc/Screenshot_07_desktop.png)
+
+
+### [Comandos do Chatbot](#índice)
 
 > Abaixo estão os principais comandos do chatbot:
 
@@ -95,10 +147,5 @@ partida      → Informa sobre a próxima partida
 redes        → Compartilha os links para redes sociais oficiais
 ```
 
-## [Aprendizados](#índice)
-
-> *Em breve...*
-
-## [Licença](#índice)
-
-> *Em breve...*
+<!-- ## [Aprendizados](#índice) -->
+<!-- ## [Licença](#índice) -->
