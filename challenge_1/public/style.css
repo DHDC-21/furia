@@ -1,33 +1,53 @@
-
-#chatbot{
+#chatbot {
     margin-left: auto;
-    margin-bottom: 20px;
     margin-right: 20px;
-    width: 350px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 350px;
+    border-radius: 10px;
+    overflow: hidden; /* Garante que cantos arredondados funcionem nos filhos */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    /* padding: 0; */
 }
 
-#chatbot_messages{
+#chatbot_messages {
     display: flex;
     flex-direction: column;
     height: 450px;
     overflow-y: auto;
+    padding: 0.5rem;
 }
 
-#bot_message, #user_message{
+#bot_message, #user_message {
     padding: 0.5em;
-    margin: 1rem;
+    margin: 0.5rem 0;
     border-radius: 5px;
-    margin-bottom: 5px;
     max-width: 80%;
-    width: 80%;
+    word-break: break-word;
 }
 
-#bot_message{
+#bot_message {
     align-self: flex-start;
-    margin-right: auto;
 }
 
-#user_message{
+#user_message {
     align-self: flex-end;
-    margin-left: auto;
+}
+
+#chatbot_input {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    gap: 0.5rem;
+}
+
+#chatbot_input_message {
+    flex: 1;
+}
+
+@media (max-width: 576px) {
+    #chatbot {
+        width: 95%;
+        margin: 0 auto 20px auto;
+    }
 }

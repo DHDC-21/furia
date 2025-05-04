@@ -1,6 +1,16 @@
-<div id="chatbot" class="fixed-bottom bg-secondary bg-gradient bg-opacity-75" >
-    <div id="chatbot_header" class="bg-secondary text-white fs-3 text-uppercase text-center d-flex
-    justify-content-between">
+<div 
+    id="chatbot"
+    class="
+        fixed-bottom
+        container-fluid
+        p-0
+        bg-secondary-subtle
+        "
+    >
+    <div 
+        id="chatbot_header"
+        class="bg-success text-white fs-3 text-uppercase text-center d-flex justify-content-between p-2"
+        >
         <div>
             <i class="bi bi-chat ms-3 me-1"></i>
             furia chat
@@ -8,20 +18,21 @@
         <button type="button" class="btn-close" onclick="toggleChatbot()"></button>
     </div>
 
-    <div id="chatbot_messages" class="">
-        <div id="bot_message" class="bg-secondary-subtle">
-            <p>
-                Olá furiosos! <br>
-                Bem-vindo(a) ao webchat dos fãs da FURIA:CS <br>
-                Use o comando <strong>"help"</strong> para ver os comandos do chat.
-            </p>
-        </div>
+
+    <div 
+        id="chatbot_messages" 
+        class="
+            bg-success bg-gradient bg-opacity-50
+            "
+        >
+        <%- include('message') %>
     </div>
 
-    <div
+    <di
+    v
         id="chatbot_input"
-        class="bg-secondary d-flex align-items-center p-2"
-    >
+        class="bg-success d-flex align-items-center p-2"
+        >
 
         <input 
             type="text"
@@ -41,7 +52,7 @@
             <i class="bi bi-send fs-6"></i>
         </button>
 
-    </div>
+    </di>
 </div>
 
 <button id="open_chatbot_button" class="btn btn-success position-fixed bottom-0 end-0 m-3" style="display: none;" onclick="toggleChatbot()">

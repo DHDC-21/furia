@@ -1,7 +1,11 @@
-<div id="user_message" class="bg-success-subtle">
-   <p><%- userMessage %></p>
-</div>
+<% if (typeof userMessage !== 'undefined' && userMessage) { %>
+    <div id="user_message" class="bg-light bg-gradient w-100">
+        <%- userMessage %>
+    </div>
+<% } %>
 
-<div id="bot_message" class="bg-secondary-subtle">
-    <p><%- botMessage %></p>
-</div>
+<% if (typeof botMessage !== 'undefined' && botMessage) { %>
+    <div id="bot_message" class="bg-success-subtle w-100">
+        <%- botMessage %>
+    </div>
+<% } %>

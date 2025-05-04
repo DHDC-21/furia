@@ -1,78 +1,104 @@
+# Desafio #1: Experiência Conversacional
 
-# MIDDLEWARE DE SETUP AUTOMÁTICO + TEMPLATE EJS ESTILO O REACT
+## Índice
 
-## Objetivos:
+- [Objetivo](#objetivo)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Funcionalidades](#funcionalidades)
+- [Diagramas](#diagramas)
+- [Comandos do Chatbot](#comandos-do-chatbot)
+- [Aprendizados](#aprendizados)
+- [Licença](#licença)
 
-- Imitar o funcionamento do React usando o EJS
-- Criar um setup de configuração automático semelhante ao do wordpress e gitea
-- Evitar código repetitivo
-- Melhorar a estruturação, arquitetura e organização do projeto
+## [Objetivo](#índice)
 
-## Tecnologias utilizadas:
+> Descreva de forma breve qual era o desafio proposto e o que você desenvolveu.  
+> Por exemplo: "Criar um chatbot funcional com interface web responsiva e integração com comandos pré-definidos."
 
-Essenciais: `NodeJS`, `Express`, `EJS`, `Sequelize`, `dotenv`, `cookie-parser`.
+## [Tecnologias Utilizadas](#índice)
 
-Não-Essenciais: `Bootstrap`, `Bootstrap-icons`, `ip`, `morgan`, `noodemon`
 
-## Como utilizar o projeto?
+- HTML5
+- CSS3
+- JavaScript (ES6)
+- Bootstrap 5
+- Node.js
+- Express
+- EJS
 
-### Instalação do projeto:
+## [Estrutura do Projeto](#índice)
 
-Após instalar o NodeJS, utilize os seguintes comando no terminal:
+O referente projeto esta organizado seguindo os moldes do padrão MVC:
 
-```bash
-git clone https://github.com/DHDC-21/express-magic-setup
+```
+.
+├── nodemon.json
+├── package.json 
+├── package-lock.json
+├── /public
+│   # Pasta com os arquivos estático como css, javascript e images
+│
+├── README.md
+├── server.js
+└── /src
+    ├── app.js
+    ├── /controllers
+    │   # Pasta com os controladores das rotas
+    │
+    ├── /routes
+    │   # Pasta com as configurações das rotas
+    │
+    └── /views
+        │   #Pasta com os arquivos html/ejs do projeto
+        │
+        ├── /chat
+        │   #Pasta com os arquivos do webchat/chatbot
+        │
+        ├── /components
+        │   # Pastas com os componentes da página
+        │
+        ├── index.ejs
+        │   # Arquivo da pagina principal
+        │
+        ├── layout.html
+        │   # Arquivo de layout da página principal
+        │
+        └── /sections
+            # Seções da landing page
 ```
 
-```bash
-cd express-magic-setup
+## [Funcionalidades](#índice)
+
+> Liste as principais funcionalidades implementadas:
+
+- Chatbot com respostas interativas
+- Interface responsiva com Bootstrap
+- Comandos específicos sobre o time FURIA
+- Minimizar/expandir chatbot
+- Histórico de mensagens (até recarregar a página)
+- Navegação pelas seções da landing page
+
+## [Diagramas](#índice)
+
+> *Em breve...*
+
+## [Comandos do Chatbot](#índice)
+
+> Abaixo estão os principais comandos do chatbot:
+
+```plaintext
+help         → Mostra todos os comandos disponíveis
+furia        → Informações sobre a equipe de CS:GO da FURIA
+jogadores    → Lista dos jogadores do time de CS:GO da FURIA
+partida      → Informa sobre a próxima partida
+redes        → Compartilha os links para redes sociais oficiais
 ```
 
-```bash
-npm install
-```
+## [Aprendizados](#índice)
 
-```bash
-npm start
-```
+> *Em breve...*
 
-### Como funciona:
+## [Licença](#índice)
 
-Minha ideia era um seguinte, fazer com que de forma gráfica, ou seja, através do navegador o usuário pudesse configurar as variáveis de ambiente para acessar o banco de dados e criar um usuário administrador para sistemas de login.
-
-Dessa forma foi desenvolvido um middleware para realizar essa configuração inicial no sistema fazendo as seguintes análises:
-
-1. Verifica se o arquivo .env existe. Caso não exista acione a rota `/setup/database` para configurar as variáveis de ambiente do projeto, caso contrário então prossiga.
-
-2. Testa a conexão com o banco de dados. Caso não der certo então acione a rota `/setup/database`, caso contrário então prossiga
-
-3. Verifica se a tabela `Usuario` existe no sistema. Caso não exista, então crie a tabela, caso contrário então prossiga.
-
-4. Busque por um usuário administrador no sistema. Caso não exista, acione a rota `/setup/admin` para criar um novo usuário administrador, caso exista então saia do middleware.
-
-Antes disso, eu estava testando formas de trabalhar com o EJS que fosse semelhante ao React, e acabai juntando os dois projetos em um, veja:
-
-```html
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>
-		<%-title%> <!-- Tag ejs -->
-	</title>
-
-    <link rel="stylesheet" href="/css/bootstrap.min.css">    
-    <link rel="stylesheet" href="/bootstrap-icons.min.css">
-
-    <script src="/js/bootstrap.min.js"></script>
-</head>
-<body>
-	<%- include(page) %> <!-- Tag ejs -->
-	<!-- Renderiza o arquivo que contenha o caminho igual o passado pela variável "page" -->
-</body>
-</html>
-```
-
-Com isso é possível padronizar a estrutura base do html e suas importações comuns de **css** e **js**, além disso caso venha a utilizar o `i18n` fica mais simples dar manutenção na estrutura base do html alterando apenas a tag `<html lang="<%- lang %>">`.
+> *Em breve...*
